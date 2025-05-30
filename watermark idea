@@ -6676,12 +6676,12 @@ function library:createwatermark()
     local watermark = { title = 'watermark', objects = {}, tickrate = 25 }
     local watermark_init = tick()
 
-    watermark.objects.background = library:create('Square', { Size = UDim2.new(0, utility.textlength(watermark.title, 2, 40).X + 5, 0, 19), Position = UDim2.new(0, 18, 0, 200), Color = Color3.fromRGB(13, 13, 13), ZIndex = 1, Thickness = 1, Filled = true }, true)
+    watermark.objects.background = library:create('Square', { Size = UDim2.new(0, utility.textlength(watermark.title, 2, 13).X + 5, 0, 19), Position = UDim2.new(0, 18, 0, 75), Color = Color3.fromRGB(13, 13, 13), ZIndex = 1, Thickness = 1, Filled = true }, true)
 
     watermark.objects.outline1 = library:outline(watermark.objects.background, Color3.fromRGB(44, 44, 44), 10, true)
     watermark.objects.outline2 = library:outline(watermark.objects.outline1, Color3.fromRGB(0, 0, 0), 10, true)
 
-    watermark.objects.text2 = library:create("Text", { Parent = watermark.objects.background, Visible = true, Transparency = 1, Theme = "Accent", Size = 13, Text = 'COSMOS.BETA [PRIVATE VERSION V1.7.2]', Center = false, Outline = false, Font = Drawing.Fonts.Plex, Position = UDim2.new(0, 3, 0, 30), ZIndex = 11 })
+    watermark.objects.text2 = library:create("Text", { Parent = watermark.objects.background, Visible = true, Transparency = 1, Theme = "Accent", Size = 13, Text = 'COSMOS.BETA V2', Center = false, Outline = false, Font = Drawing.Fonts.Plex, Position = UDim2.new(0, 3, 0, 2), ZIndex = 11 })
     watermark.objects.text3 = library:create("Text", { Text = watermark.title, Parent = watermark.objects.background, Visible = true, Transparency = 1, Theme = "Text", Size = 13, Center = false, Outline = false, Font = Drawing.Fonts.Plex, Position = UDim2.new(0, utility.textlength(watermark.objects.text2.Text, 2, 13).X + 5, 0, 2), ZIndex = 11 })
 
     watermark.objects.line1 = library:create("Square", { Parent = watermark.objects.background, Visible = true, Transparency = 1, Theme = "Accent", Size = UDim2.new(0, 20, 0, 1), Position = UDim2.new(0, 0, 1, -1), Thickness = 1, Filled = true, ZIndex = 11 })
